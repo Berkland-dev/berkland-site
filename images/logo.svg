@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <circle cx="100" cy="100" r="96" fill="#0B2B5C"/>
-  <circle cx="100" cy="100" r="96" fill="none" stroke="#62B235" stroke-width="6"/>
-  <path d="M100 45 C130 70 150 100 100 155 C50 100 70 70 100 45 Z" fill="#62B235"/>
-  <text x="100" y="112" font-family="Georgia, serif" font-size="46" font-weight="700"
-        text-anchor="middle" fill="#FFFFFF">BC</text>
-</svg>
