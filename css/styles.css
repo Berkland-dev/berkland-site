@@ -12,8 +12,8 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-body); scroll-behavior: smooth; }
-html { width: 100%; }
-body { background-color: var(--bg-slate); color: var(--text-dark); overflow-x: hidden; width: 100%; max-width: 100vw; }
+html { width: 100%; overflow-x: hidden; }
+body { background-color: var(--bg-slate); color: var(--text-dark); overflow-x: hidden; width: 100%; max-width: 100vw; position: relative; }
 img { max-width: 100%; }
 h1, h2, h3, h4, h5, p { overflow-wrap: break-word; word-wrap: break-word; }
 .brand-accent { font-family: var(--font-brand) !important; font-weight: 700; letter-spacing: 0.5px; }
@@ -53,8 +53,8 @@ header.scrolled { background: rgba(255,255,255,.88); backdrop-filter: blur(16px)
 
 /* Hero */
 .hero-section { position:relative; height:90vh; min-height:640px; display:flex; align-items:center; justify-content:center; color:#fff; text-align:center; overflow:hidden; }
-.hero-video-wrap { position:absolute; top:50%; left:50%; min-width:100%; min-height:100%; width:auto; height:auto; transform:translate(-50%,-50%); z-index:1; pointer-events:none; }
-.hero-video-wrap iframe, .hero-video-wrap video { width:100vw; height:56.25vw; min-height:100vh; min-width:177.77vh; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); object-fit:cover; border:none; }
+.hero-video-wrap { position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; pointer-events:none; overflow:hidden; }
+.hero-video-wrap iframe, .hero-video-wrap video { width:100%; height:100%; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); object-fit:cover; border:none; }
 .hero-overlay { position:absolute; inset:0; background: linear-gradient(135deg, rgba(11,43,92,.42) 0%, rgba(15,23,42,.35) 100%); z-index:2; }
 .hero-content { position:relative; z-index:3; max-width:980px; padding:0 24px; }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; background:rgba(11,43,92,.6); border:1px solid rgba(255,255,255,.35); backdrop-filter:blur(8px); padding:9px 26px; border-radius:30px; font-weight:700; font-size:.95rem; margin-bottom:22px; text-transform:uppercase; letter-spacing:1px; text-shadow:0 2px 4px rgba(0,0,0,.6); }
@@ -233,13 +233,17 @@ footer { background: var(--primary-navy); color:#fff; padding:70px 24px 30px 24p
   .pillar-grid { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
   .about-wrap, .certs-grid { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
 }
+
 @media (max-width: 768px) {
   .top-strip { display:none; }
   .nav-links { display:none; }
   .mobile-menu-btn { display:block; }
-  .hero-title { font-size:2.4rem; }
-  .hero-title span.accent { font-size:3rem; }
-  .rotator-target { font-size:1.8rem; }
+  
+  /* تعديل العنوان لمنع انزلاق الكلام يميناً */
+  .hero-title { font-size: 2rem; word-break: break-word; }
+  .hero-title span.accent { font-size: 2.3rem; display: block; margin-left: 0; }
+  
+  .rotator-target { font-size:1.6rem; }
   .section-headline h2 { font-size:1.7rem; }
   .section-headline span { font-size:1.4rem; }
   .brand-title { font-size:2rem; }
@@ -253,8 +257,13 @@ footer { background: var(--primary-navy); color:#fff; padding:70px 24px 30px 24p
   .hero-btns { flex-direction:column; align-items:stretch; gap:12px; }
   .hero-btns a, .hero-btns button { justify-content:center; }
   .metrics-container { margin-top:24px; margin-bottom:50px; }
-  .hero-section { height:auto; min-height:100vh; overflow:visible; padding:90px 0 50px 0; }
-  .hero-content { padding:0 20px; }
+  
+  /* تعديل منطقة الـ Hero والفيديو لإلغاء الفراغات والسكورول الجانبي */
+  .hero-section { height: auto; min-height: 80vh; padding: 40px 0; display: flex; align-items: center; justify-content: center; }
+  .hero-video-wrap { width: 100%; height: 100%; top: 0; left: 0; }
+  .hero-video-wrap iframe, .hero-video-wrap video { width: 100%; height: 100%; min-width: 100%; min-height: 100%; object-fit: cover; }
+  .hero-content { padding: 0 16px; width: 100%; }
+  
   .ptype-grid, .addon-list { grid-template-columns:1fr; }
   .wizard-progress { gap:6px; }
   .wizard-dot span.lbl { display:none; }
