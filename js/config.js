@@ -20,7 +20,7 @@ const SITE_CONFIG = {
   LEAF_GREEN: "#62B235",
 
   // ---- Hero background video (direct .mp4 URL or a YouTube URL) ----
-  HERO_BG_VIDEO: "https://assets.mixkit.co/videos/preview/mixkit-cleaning-staff-working-in-an-office-41364-large.mp4",
+  HERO_BG_VIDEO: "https://youtu.be/h8I4ZFaqoFM",
 
   // ---- Backend API base URL ----
   // This is the ONLY place the site knows about your backend.
