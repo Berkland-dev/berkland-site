@@ -20,7 +20,7 @@ const SITE_CONFIG = {
   LEAF_GREEN: "#62B235",
 
   // ---- Hero background video (direct .mp4 URL or a YouTube URL) ----
-  HERO_BG_VIDEO: "https://youtu.be/h8I4ZFaqoFM",
+  HERO_BG_VIDEO: "videos/hero.mp4",
 
   // ---- Backend API base URL ----
   // This is the ONLY place the site knows about your backend.
